@@ -1,11 +1,11 @@
 import React from 'react';
 import TodoListItem from './TodoListItem';
 
-function TodoList({ todos, toggleTodo, deleteTodo }) {
-  const activeList = [];
-  const completeList = [];
+function TodoList({ todos, toggleTodo, deleteTodo }: any) {
+  const activeList: any = [];
+  const completeList: any = [];
 
-  todos.forEach(item => {
+  todos.forEach((item: any) => {
     const listItem = <TodoListItem key={item.id} item={item} onClick={() => toggleTodo(item.id)} deleteTodo={deleteTodo} />;
 
     if (item.isDone) {

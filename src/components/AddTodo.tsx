@@ -5,14 +5,14 @@ import { Button } from 'react-bootstrap';
 
 function AddTodo() {
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
+  const [name, setName] = useState<any>('');
 
-  const onChange = event => {
+  const onChange = (event: any) => {
     setName(event.target.value)
   }
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
     if (!name) return;
     dispatch(addTodo(name))
     setName('');
