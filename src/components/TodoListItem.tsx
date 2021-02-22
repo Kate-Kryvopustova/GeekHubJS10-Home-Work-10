@@ -1,4 +1,3 @@
-import React from 'react';
 import { Check2, Circle } from 'react-bootstrap-icons';
 
 function TodoListItem({ onClick, item, deleteTodo }: any) {
@@ -12,16 +11,16 @@ function TodoListItem({ onClick, item, deleteTodo }: any) {
   }
 
   return (
-    <li className="list-group-item" onClick={onClick}>
-      <div className={todoClass}>
+    <li className="list-group-item" onClick={ onClick }>
+      <div className={ todoClass }>
         {
           isDoneItem
             ? <Check2 />
             : <Circle />
         }
-        <span style={svgStyle}>{item.text}</span>
+        <span style={ svgStyle }>{ item.text }</span>
 
-        <button className='close' onClick={onDelete}>&times;</button>
+        <button className='close' onClick={ onDelete }>&times;</button>
       </div>
     </li>
   )

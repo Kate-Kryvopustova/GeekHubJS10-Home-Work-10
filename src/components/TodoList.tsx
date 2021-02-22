@@ -1,7 +1,26 @@
-import React from 'react';
 import TodoListItem from './TodoListItem';
 
-function TodoList({ todos, toggleTodo, deleteTodo }: any) {
+interface Itest {
+  id: string ,
+  text: string,
+  isDone: boolean
+}
+
+interface ItoggleTodo {
+  (id: string ) : void
+}
+
+interface IdeleteTodo {
+  (id: string ) : void
+}
+
+interface Itodos {
+  todos: Array<Itest>,
+  toggleTodo: ItoggleTodo,
+  deleteTodo: IdeleteTodo
+}
+
+function TodoList({ todos, toggleTodo, deleteTodo }: Itodos) {
   const activeList: any = [];
   const completeList: any = [];
 

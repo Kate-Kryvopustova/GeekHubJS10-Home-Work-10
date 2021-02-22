@@ -1,23 +1,22 @@
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import { useSelector, useDispatch } from "react-redux";
-import React from 'react';
-import { toggleTodo, deleteTodo } from './actions/index'
+import { toggleTodo, deleteTodo } from './actions/index';
 
 function App() {
   const dispatch = useDispatch();
-  const todos = useSelector(state => state.todos )
+  const todos = useSelector(state => state.todos );
 
   const onToggle = id => dispatch(toggleTodo(id)); 
   const onDelete = id => dispatch(deleteTodo(id));
   return (
     <div id='main'>
       <h1 className='title'>Todo list</h1>
-        <AddTodo/>
+        <AddTodo />
         <TodoList 
-          todos={todos}
-          toggleTodo={onToggle}
-          deleteTodo={onDelete}
+          todos={ todos }
+          toggleTodo={ onToggle }
+          deleteTodo={ onDelete }
         />
     </div>
   );
