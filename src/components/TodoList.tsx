@@ -1,47 +1,39 @@
+import { useMemo } from 'react';
 import TodoListItem from './TodoListItem';
+import { ITodoList, IVisibilityList, IItem } from '../interfaces/interfaces';
 
-interface Itest {
-  id: string ,
-  text: string,
-  isDone: boolean
-}
+function TodoList({ todos, toggleTodo, deleteTodo }: ITodoList) {
 
-interface ItoggleTodo {
-  (id: string ) : void
-}
+  const { activeList, completeList }: IVisibilityList = useMemo(() => {
+    const activeList: Array<JSX.Element> = [];
+    const completeList: Array<JSX.Element> = [];
 
-interface IdeleteTodo {
-  (id: string ) : void
-}
+    todos.forEach((item: IItem) => {
+      const listItem = (
+        <TodoListItem 
+          key={ item.id } 
+          item={ item } 
+          onClick={ () => toggleTodo(item.id) } 
+          deleteTodo={ deleteTodo } 
+        />
+      );
+  
+      (item.isDone ? completeList : activeList).push(listItem)
+      
+    });
 
-interface Itodos {
-  todos: Array<Itest>,
-  toggleTodo: ItoggleTodo,
-  deleteTodo: IdeleteTodo
-}
+    return { activeList, completeList };
 
-function TodoList({ todos, toggleTodo, deleteTodo }: Itodos) {
-  const activeList: any = [];
-  const completeList: any = [];
-
-  todos.forEach((item: any) => {
-    const listItem = <TodoListItem key={item.id} item={item} onClick={() => toggleTodo(item.id)} deleteTodo={deleteTodo} />;
-
-    if (item.isDone) {
-      return completeList.push(listItem)
-    } else {
-      return activeList.push(listItem)
-    }
-  });
+  }, [todos]);
 
   return (
     <div>
       <ul className='list-group'>
-        {activeList}
+        { activeList }
       </ul>
       <hr />
       <ul className='list-group'>
-        {completeList}
+        { completeList }
       </ul>
     </div>
   )

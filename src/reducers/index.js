@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
+import { initialState } from '../store/initialState';
 
-const todos = (state = [], action) => {
+const todos = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -17,7 +18,8 @@ const todos = (state = [], action) => {
       );
     case 'DELETE_TODO':
       return state.filter(item => 
-        item.id !== action.id)
+        item.id !== action.id
+      );
     default:
       return state;
   }

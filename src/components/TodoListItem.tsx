@@ -1,13 +1,14 @@
 import { Check2, Circle } from 'react-bootstrap-icons';
+import { ITodos, IClickDeleteItem } from '../interfaces/interfaces'
 
-function TodoListItem({ onClick, item, deleteTodo }: any) {
+function TodoListItem({ onClick, item, deleteTodo }: ITodos) {
   const todoClass = item.isDone ? 'done' : 'undone';
   const isDoneItem = item.isDone;
   const svgStyle = { marginLeft: 15 };
 
-  const onDelete = (event: any) => {
+  const onDelete: IClickDeleteItem = (event) => {
     event.stopPropagation();
-    deleteTodo(item.id)
+    deleteTodo(item.id);
   }
 
   return (

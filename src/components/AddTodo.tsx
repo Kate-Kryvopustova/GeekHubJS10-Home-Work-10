@@ -2,16 +2,17 @@ import { useState } from 'react';
 import { addTodo } from '../actions';
 import { useDispatch } from "react-redux";
 import { Button } from 'react-bootstrap';
+import { IOnChangeInput, IHandleSubmit } from '../interfaces/interfaces';
 
 function AddTodo() {
   const dispatch = useDispatch();
   const [name, setName] = useState<string>('');
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange: IOnChangeInput = (event) => {
     setName(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<EventTarget>) => {
+  const handleSubmit: IHandleSubmit = (event) => {
     event.preventDefault();
     if (!name) return;
     dispatch(addTodo(name));

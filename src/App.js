@@ -5,10 +5,11 @@ import { toggleTodo, deleteTodo } from './actions/index';
 
 function App() {
   const dispatch = useDispatch();
-  const todos = useSelector(state => state.todos );
+  const todos = useSelector(state => state.todos);
 
   const onToggle = id => dispatch(toggleTodo(id)); 
   const onDelete = id => dispatch(deleteTodo(id));
+  
   return (
     <div id='main'>
       <h1 className='title'>Todo list</h1>
