@@ -12,7 +12,7 @@ function TodoListItem({ onClick, item, deleteTodo }: ITodos) {
   }
 
   return (
-    <li className="list-group-item" onClick={ onClick }>
+    <li className='list-group-item' onClick={ onClick }>
       <div className={ todoClass }>
         {
           isDoneItem
