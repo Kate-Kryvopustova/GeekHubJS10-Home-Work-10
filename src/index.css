@@ -1,39 +1,34 @@
-#main {
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.title {
-  font-family: cursive;
-}
 
-.form-inline {
-  margin: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
+/*.form-inline {*/
+/*  margin: 15px;*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*  justify-content: center;*/
+/*}*/
 
-.form-control {
-  margin-right: 10px;
-  font-style: italic;
-}
+/*.form-control {*/
+/*  margin-right: 10px;*/
+/*  font-style: italic;*/
+/*}*/
 
-.list-group {
-  width: 600px;
-} 
+/*.list-group {*/
+/*  width: 600px;*/
+/*}*/
 
-li:hover {
-  background-color: #F5F5F5;
-}
+/*.list-group-item {*/
+/*  cursor: pointer;*/
+/*}*/
 
-.done {
-  color: red;
-  text-decoration: line-through;
-}
+/*li:hover {*/
+/*  background-color: #F5F5F5;*/
+/*}*/
 
-.undone {
-  color: rgb(0, 172, 219);
-}
+/*.done {*/
+/*  color: red;*/
+/*  text-decoration: line-through;*/
+/*}*/
+
+/*.undone {*/
+/*  color: rgb(0, 172, 219);*/
+/*}*/
